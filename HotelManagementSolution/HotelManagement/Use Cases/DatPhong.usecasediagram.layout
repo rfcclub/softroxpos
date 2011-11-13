@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DatPhong">
+  <useCaseModelRootMoniker Id="eeda7aaf-2b39-465b-9738-fbe01e4afaaf" />
+  <nestedChildShapes>
+    <actorShape Id="83e9efc9-d946-4abf-b1be-f9bc04b5770b" absoluteBounds="0.875, 2.25, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="7256ace9-c33d-49b2-bc71-e7f6008099f1" LastKnownName="Nguoi Dung" />
+      <relativeChildShapes />
+    </actorShape>
+  </nestedChildShapes>
+</useCaseDiagram>

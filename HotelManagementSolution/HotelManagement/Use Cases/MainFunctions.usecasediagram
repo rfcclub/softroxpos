@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3333be7e-f893-4cc7-9505-4b7870902218" name="MainFunctions" linkedPackageId="0f16810a-210e-4eb5-b88b-320d71a29179" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="d568c9eb-64bd-4519-8867-e1f129326036">
+      <profileInstance Id="fcf824ce-cec8-481f-a108-ac2bfe8dbd3b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="0b413618-8a5a-44ef-81b3-998fc53a35c1">
+      <profileInstance Id="bf814572-457c-4999-b47b-b921c881cc2e" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="af0e76be-8c5f-4190-9c0d-17dc1fb48b79" name="Nguoi Dung" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3ba3f4b5-0b34-4b9b-bcc1-476206333170" />
+        <targetEnds>
+          <association Id="d0704afb-d7ab-4aca-a5d7-ffe133f3c605" isDerived="false" sourceEndRoleName="Nguoi Dung" targetEndRoleName="DatPhong" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="60c2a7e1-544b-4099-9eb2-29be0305cb01" LastKnownName="DatPhong" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="303680b4-0886-4240-a0d2-8a450deb3a58" name="Nguoi Dung" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e351aa22-b4c1-4331-ae3c-dc60d7e546e3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="06d41a89-1831-44d2-a993-cef395666c28" name="DatPhong" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="788ded22-8d3d-4ac8-bf55-95e40336a1c3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="64e2c411-6850-45a4-88a9-b8b1dd4203a8" />
+          </association>
+          <association Id="155e0f0e-b7f3-4e88-ad32-840e282560c3" isDerived="false" sourceEndRoleName="Nguoi Dung" targetEndRoleName="TiepTan" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="85f6f9b1-d0b9-48b6-93e4-a4981e09fca7" LastKnownName="TiepTan" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8099abf3-6c7a-478c-ae7e-70d87c9b95a3" name="Nguoi Dung" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7076e861-cc04-49d1-bab0-f5ae7ec40ac4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7897f465-aba9-4607-aaca-b3f96e3e4452" name="TiepTan" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="efab3db0-a41c-48fd-9d89-a6ef456ed56c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8cf40c43-751d-408a-8ff8-a96bef3df7cf" />
+          </association>
+          <association Id="6bb8d0e1-0898-4607-8fcd-8717a4c47ecd" isDerived="false" sourceEndRoleName="Nguoi Dung" targetEndRoleName="ThuNgan" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="fd5b27b4-38e3-41ea-a30f-ef654ba74b35" LastKnownName="ThuNgan" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7efc56e3-97dd-4bbb-a608-f8c6d6003525" name="Nguoi Dung" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="dc3519dd-c96b-44d0-8c19-c16805727294" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dfef4f08-09ab-4af5-baf2-82d9da94bc84" name="ThuNgan" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="86109169-6b48-49f5-9ecb-c2176a76d51d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="86c5af7e-6cca-44ff-b536-6007c2cd8c56" />
+          </association>
+          <association Id="e1c8a44c-5ee7-4956-8927-a64c348fe4eb" isDerived="false" sourceEndRoleName="Nguoi Dung" targetEndRoleName="QuanLy" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="cbd2fc5e-cdd3-494f-b336-8f20120d037b" LastKnownName="QuanLy" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3297ac8-d56c-4ed8-b1c2-6bde6ca34cc2" name="Nguoi Dung" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7a7ead27-8858-47ef-b912-3d26bf3e979a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a9477388-3fe4-4481-84e7-69a5f284cfa7" name="QuanLy" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9611e98d-9cd0-44b9-8b71-4499ecce0d2b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2fb82fff-1f48-43b1-940c-56a7f65e34c4" />
+          </association>
+          <association Id="140461f0-9283-48e3-a9d4-7e271c84aca4" isDerived="false" sourceEndRoleName="Nguoi Dung" targetEndRoleName="Marketing" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7fabf5c0-9487-489f-8271-740642218d8b" LastKnownName="Marketing" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9054ca13-25fe-4f40-ad16-07c7a19a385d" name="Nguoi Dung" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f78e9120-ac2f-483f-bb30-b913eba7dd99" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="95eb3fbd-a1a6-43d2-b4ff-261336977681" name="Marketing" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a17de884-d821-4981-9d26-cf4f5408cec3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="924122d3-b1b7-41da-b92e-2f59115e2c5a" />
+          </association>
+          <association Id="8ddb60e6-8ecb-42fc-a408-ee61fc1a1c34" isDerived="false" sourceEndRoleName="Nguoi Dung" targetEndRoleName="Bao Cao" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="52a40648-254c-454d-948f-efdde6c3953b" LastKnownName="Bao Cao" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="56a824cb-ffe4-46d6-a32e-d1442dc3b8c4" name="Nguoi Dung" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3b694762-9ce3-4556-97bd-d81536b2d495" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="52edb58d-1710-4f9d-8d89-73a51096b622" name="Bao Cao" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="23775b47-61b7-49ec-81b4-f66268f99d4b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ce1087b0-cd2a-4616-829b-e89048dcaf60" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="60c2a7e1-544b-4099-9eb2-29be0305cb01" name="DatPhong" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8060d976-dea6-43b8-8a8e-2371b468bd2e" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="85f6f9b1-d0b9-48b6-93e4-a4981e09fca7" name="TiepTan" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c59f2ef7-65a6-4637-a068-ef7c100e4b8b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="fd5b27b4-38e3-41ea-a30f-ef654ba74b35" name="ThuNgan" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3db17ba2-ee84-41f8-8494-0d8a5097eef2" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="cbd2fc5e-cdd3-494f-b336-8f20120d037b" name="QuanLy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3c6c6d1a-3fd4-4bbe-83dc-3ac82355648d" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b6f918ca-d0d2-4e4c-9cab-48665e5789fa" name="Lu Hanh" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7d928b53-2830-4679-99e4-d3d04fefc00b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7fabf5c0-9487-489f-8271-740642218d8b" name="Marketing" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="254c7217-8a6c-43cb-b8ed-8c91646a895a" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="52a40648-254c-454d-948f-efdde6c3953b" name="Bao Cao" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fc905a25-caae-4562-9667-99f70011ce43" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="0f16810a-210e-4eb5-b88b-320d71a29179" name="HotelManagement">
+    <elementDefinition Id="addd88dd-3815-4e2d-b072-630db8a95770" />
+  </package>
+</useCaseModelRoot>
