@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="eeda7aaf-2b39-465b-9738-fbe01e4afaaf" name="DatPhong" linkedPackageId="d622f03e-c1e6-4d76-be08-4d794dd495cb" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="f2c0fa35-a06e-4428-b545-f15b6c137572">
+      <profileInstance Id="c01bb4c2-922b-4507-9a66-de0810229264" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="e0b95cbe-9a7d-4929-bc52-b9048dfb2217">
+      <profileInstance Id="e02b04c4-bd71-4ab5-8db6-6a3056891d17" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="7256ace9-c33d-49b2-bc71-e7f6008099f1" name="Nguoi Dung" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ae4800f9-c5ae-4efb-9fca-113da0ab5820" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="d622f03e-c1e6-4d76-be08-4d794dd495cb" name="HotelManagement">
+    <elementDefinition Id="addd88dd-3815-4e2d-b072-630db8a95770" />
+  </package>
+</useCaseModelRoot>

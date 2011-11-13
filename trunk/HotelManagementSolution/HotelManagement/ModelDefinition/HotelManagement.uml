@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="addd88dd-3815-4e2d-b072-630db8a95770"
+  name="HotelManagement" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="a3f84a0f-5e4d-4588-9565-e277b467947e"
+        name="MainFunctions"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="3ba3f4b5-0b34-4b9b-bcc1-476206333170"
+        name="Nguoi Dung"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="64e2c411-6850-45a4-88a9-b8b1dd4203a8"
+            isDerived="false"
+            sourceEndRoleName="Nguoi Dung"
+            targetEndRoleName="DatPhong"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="8060d976-dea6-43b8-8a8e-2371b468bd2e"
+              LastKnownName="DatPhong"
+              LastKnownLocation="HotelManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e351aa22-b4c1-4331-ae3c-dc60d7e546e3"
+                  name="Nguoi Dung"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="788ded22-8d3d-4ac8-bf55-95e40336a1c3"
+                  name="DatPhong"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="8cf40c43-751d-408a-8ff8-a96bef3df7cf"
+            isDerived="false"
+            sourceEndRoleName="Nguoi Dung"
+            targetEndRoleName="TiepTan"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c59f2ef7-65a6-4637-a068-ef7c100e4b8b"
+              LastKnownName="TiepTan"
+              LastKnownLocation="HotelManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7076e861-cc04-49d1-bab0-f5ae7ec40ac4"
+                  name="Nguoi Dung"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="efab3db0-a41c-48fd-9d89-a6ef456ed56c"
+                  name="TiepTan"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="86c5af7e-6cca-44ff-b536-6007c2cd8c56"
+            isDerived="false"
+            sourceEndRoleName="Nguoi Dung"
+            targetEndRoleName="ThuNgan"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3db17ba2-ee84-41f8-8494-0d8a5097eef2"
+              LastKnownName="ThuNgan"
+              LastKnownLocation="HotelManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dc3519dd-c96b-44d0-8c19-c16805727294"
+                  name="Nguoi Dung"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="86109169-6b48-49f5-9ecb-c2176a76d51d"
+                  name="ThuNgan"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2fb82fff-1f48-43b1-940c-56a7f65e34c4"
+            isDerived="false"
+            sourceEndRoleName="Nguoi Dung"
+            targetEndRoleName="QuanLy"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3c6c6d1a-3fd4-4bbe-83dc-3ac82355648d"
+              LastKnownName="QuanLy"
+              LastKnownLocation="HotelManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7a7ead27-8858-47ef-b912-3d26bf3e979a"
+                  name="Nguoi Dung"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9611e98d-9cd0-44b9-8b71-4499ecce0d2b"
+                  name="QuanLy"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="924122d3-b1b7-41da-b92e-2f59115e2c5a"
+            isDerived="false"
+            sourceEndRoleName="Nguoi Dung"
+            targetEndRoleName="Marketing"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="254c7217-8a6c-43cb-b8ed-8c91646a895a"
+              LastKnownName="Marketing"
+              LastKnownLocation="HotelManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f78e9120-ac2f-483f-bb30-b913eba7dd99"
+                  name="Nguoi Dung"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a17de884-d821-4981-9d26-cf4f5408cec3"
+                  name="Marketing"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ce1087b0-cd2a-4616-829b-e89048dcaf60"
+            isDerived="false"
+            sourceEndRoleName="Nguoi Dung"
+            targetEndRoleName="Bao Cao"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fc905a25-caae-4562-9667-99f70011ce43"
+              LastKnownName="Bao Cao"
+              LastKnownLocation="HotelManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3b694762-9ce3-4556-97bd-d81536b2d495"
+                  name="Nguoi Dung"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="23775b47-61b7-49ec-81b4-f66268f99d4b"
+                  name="Bao Cao"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8060d976-dea6-43b8-8a8e-2371b468bd2e"
+        name="DatPhong"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c59f2ef7-65a6-4637-a068-ef7c100e4b8b"
+        name="TiepTan"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3db17ba2-ee84-41f8-8494-0d8a5097eef2"
+        name="ThuNgan"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3c6c6d1a-3fd4-4bbe-83dc-3ac82355648d"
+        name="QuanLy"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7d928b53-2830-4679-99e4-d3d04fefc00b"
+        name="Lu Hanh"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="254c7217-8a6c-43cb-b8ed-8c91646a895a"
+        name="Marketing"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fc905a25-caae-4562-9667-99f70011ce43"
+        name="Bao Cao"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="ae4800f9-c5ae-4efb-9fca-113da0ab5820"
+        name="Nguoi Dung"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
