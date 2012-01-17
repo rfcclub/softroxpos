@@ -8,6 +8,7 @@ using System.Reactive.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using AppFrame.Binding;
 using AppFrame.Utilities;
 
 namespace AppFrame.Common
@@ -28,28 +29,10 @@ namespace AppFrame.Common
             {
                 _presenter = value;
                 _presenter.View = this;
-                ViewModel = _presenter.ViewModel;
             }
         }
 
-        private IViewModel _viewModel;
-
-        public IViewModel ViewModel
-        {
-            get { return _viewModel; }
-            set
-            {
-                _viewModel = value;
-                Binding();
-            }
-        }
-
-        private void Binding()
-        {
-            OnBinding();
-        }
-
-        private void OnBinding()
+        protected void BindToViewModel()
         {
             //Type viewModelType = ViewModel.GetType();
             //Type presenterType = Presenter.GetType();
@@ -57,14 +40,17 @@ namespace AppFrame.Common
             {
                 if (control is Button)
                 {
-                    BindingHelper.AutoBindMethod(control,Presenter);
+                    BindingHelper.AutoBindMethod(control, Presenter);
                     continue;
                 }
                 //BindingHelper.AutoBindProperty(control, ViewModel);
-                BindingHelper.AutoBindDataProperty(control, ViewModel);
+                BindingHelper.AutoBindDataProperty(control, Presenter);
                 //BindingHelper.AutoBindTextBoxProperty(control, ViewModel);
             }
+            OnBinding();
         }
+
+        public virtual void OnBinding() {}
 
         public virtual void OnLoaded() {}
 
@@ -75,11 +61,12 @@ namespace AppFrame.Common
             
             // bind method
 
-            this.Load += new EventHandler(BaseViewControlLoad);
+            this.Load += BaseViewControlLoad;
         }
 
         void BaseViewControlLoad(object sender, EventArgs e)
         {
+            BindToViewModel();
             OnLoaded();
         }
 

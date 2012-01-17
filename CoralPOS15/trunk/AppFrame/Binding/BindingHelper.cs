@@ -156,7 +156,7 @@ namespace AppFrame.Binding
                                     bool dataSourceUsing = false
                                     ) where TSource : Control
         {
-            Binding binding = new Binding(sourceExpression.ToPropertyInfo().Name,target,datamember);
+            System.Windows.Forms.Binding binding = new System.Windows.Forms.Binding(sourceExpression.ToPropertyInfo().Name, target, datamember);
             binding.ControlUpdateMode = ControlUpdateMode.OnPropertyChanged;
             source.DataBindings.Add(binding);
         }

@@ -8,7 +8,6 @@ namespace AppFrame.Common
     public interface IView
     {
         IPresenter Presenter { get; set; }
-        IViewModel ViewModel { get; set; }
         void Show();
         void Hide();
         void Close();
