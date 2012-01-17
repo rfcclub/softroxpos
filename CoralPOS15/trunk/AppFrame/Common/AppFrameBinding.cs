@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace AppFrame.Common
 {
-    public class AppFrameBinding : Binding
+    public class AppFrameBinding : System.Windows.Forms.Binding
     {
         public AppFrameBinding(string propertyName, object dataSource, string dataMember) : base(propertyName, dataSource, dataMember)
         {
