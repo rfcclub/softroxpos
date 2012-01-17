@@ -1,6 +1,6 @@
 ﻿namespace AppFrame.Common.Attributes
 {
-    class MenuItemAttribute
+    public class MenuItemAttribute : System.Attribute
     {
     }
 }

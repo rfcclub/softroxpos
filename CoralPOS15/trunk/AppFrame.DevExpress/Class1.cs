@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AppFrame.Utilities
+namespace AppFrame.DevExpress
 {
-    public class DevExpressBindingHelper : BindingHelper
+    public class Class1
     {
-
     }
 }

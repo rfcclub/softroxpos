@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AppFrame.Utilities
+namespace AppFrame.Binding
 {
     public class AttributeHelper
     {

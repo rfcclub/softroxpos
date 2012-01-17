@@ -5,7 +5,7 @@ using System.Reactive;
 using System.Reactive.Linq;
 using System.Reflection;
 
-namespace AppFrame.Utilities
+namespace AppFrame.Binding
 {
     public static class RxHelper
     {

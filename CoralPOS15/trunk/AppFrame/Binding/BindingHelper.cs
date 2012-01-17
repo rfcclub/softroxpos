@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using AppFrame.Common;
 using AppFrame.Common.Attributes;
 
-namespace AppFrame.Utilities
+namespace AppFrame.Binding
 {
     public class BindingHelper
     {

@@ -6,11 +6,11 @@ using AppFrame.Common.Attributes;
 
 namespace AppFrame.Common
 {
-    public class BasePresenter : IPresenter
+    public class BasePresenter : BindableObject, IPresenter, IViewModel
     {
         private IView _view;
 
-        private IViewModel _viewModel;
+        //private IViewModel _viewModel;
 
         public BasePresenter()
         {
@@ -26,26 +26,20 @@ namespace AppFrame.Common
             }
         }
 
-        public IViewModel ViewModel
-        {
-            get { return _viewModel; }
-            set { _viewModel = value; }
-        }
-
-        
-
         public void StartUp()
         {
             Type type = GetType();
             object[] viewModelAttributes = type.GetCustomAttributes(typeof(ViewModelAttribute), false);
             object[] viewAttributes = type.GetCustomAttributes(typeof(ViewAttribute), false);
-            if (viewModelAttributes.Count() > 0)
-            {
-                ViewModelAttribute attribute = (ViewModelAttribute)viewModelAttributes[0];
-                Type vmType = attribute.AttachViewModel;
-                object obj = Activator.CreateInstance(vmType);
-                ViewModel = (IViewModel)obj;
-            }
+            
+            // Dont need to create ViewModel because Presenter is merged to ViewModel
+            //if (viewModelAttributes.Count() > 0)
+            //{
+            //    ViewModelAttribute attribute = (ViewModelAttribute)viewModelAttributes[0];
+            //    Type vmType = attribute.AttachViewModel;
+            //    object obj = Activator.CreateInstance(vmType);
+            //    ViewModel = (IViewModel)obj;
+            //}
 
             OnStartUp();
         }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrameDemo", "AppFrameDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Step2", "Step2\Step2.csproj", "{A5B9CD70-7901-4700-96B8-01C7FAA7C06A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrame.DevExpress", "AppFrame.DevExpress\AppFrame.DevExpress.csproj", "{DDFA4811-0B6E-40BE-AA6F-5BDFD088C1F6}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -51,6 +53,16 @@ Global
 		{A5B9CD70-7901-4700-96B8-01C7FAA7C06A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{A5B9CD70-7901-4700-96B8-01C7FAA7C06A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A5B9CD70-7901-4700-96B8-01C7FAA7C06A}.Release|x86.ActiveCfg = Release|Any CPU
+		{DDFA4811-0B6E-40BE-AA6F-5BDFD088C1F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDFA4811-0B6E-40BE-AA6F-5BDFD088C1F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDFA4811-0B6E-40BE-AA6F-5BDFD088C1F6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DDFA4811-0B6E-40BE-AA6F-5BDFD088C1F6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DDFA4811-0B6E-40BE-AA6F-5BDFD088C1F6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DDFA4811-0B6E-40BE-AA6F-5BDFD088C1F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDFA4811-0B6E-40BE-AA6F-5BDFD088C1F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDFA4811-0B6E-40BE-AA6F-5BDFD088C1F6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DDFA4811-0B6E-40BE-AA6F-5BDFD088C1F6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DDFA4811-0B6E-40BE-AA6F-5BDFD088C1F6}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

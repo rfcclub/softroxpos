@@ -78,7 +78,7 @@
     <Compile Include="Common\AppFrameObserver.cs" />
     <Compile Include="Common\Attributes\DisplayValueAttribute.cs" />
     <Compile Include="Common\BindableObject.cs" />
-    <Compile Include="Utilities\AttributeHelper.cs" />
+    <Compile Include="Binding\AttributeHelper.cs" />
     <Compile Include="Common\BasePresenter.cs" />
     <Compile Include="Common\BaseView.cs">
       <SubType>UserControl</SubType>
@@ -91,9 +91,8 @@
     <Compile Include="Common\IViewModel.cs" />
     <Compile Include="Common\IView.cs" />
     <Compile Include="Common\Attributes\MenuItemAttribute.cs" />
-    <Compile Include="Utilities\BindingHelper.cs" />
-    <Compile Include="Utilities\DevExpressBindingHelper.cs" />
-    <Compile Include="Utilities\RxHelper.cs" />
+    <Compile Include="Binding\BindingHelper.cs" />
+    <Compile Include="Binding\RxHelper.cs" />
     <Compile Include="Common\Attributes\ToolBarItemAttribute.cs" />
     <Compile Include="Common\TypeToolBarItem.cs" />
     <Compile Include="Common\Attributes\ViewAttribute.cs" />
