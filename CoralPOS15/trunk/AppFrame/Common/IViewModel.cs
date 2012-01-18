@@ -8,5 +8,7 @@ namespace AppFrame.Common
 {
     public interface IViewModel : INotifyPropertyChanged
     {
+        event PropertyChangedEventHandler PropertyChanged;
+        void NotifyPropertyChanged(string propertyName);
     }
 }

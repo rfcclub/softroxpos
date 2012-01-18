@@ -10,10 +10,24 @@
     <property name="DepartmentStockInLogic" ref="AppFrame.Service.IDepartmentStockInLogic"     />    
   </object>-->  
   <!-- START Logic definitions -->
-
+  <object type="Spring.Aop.Framework.AutoProxy.InheritanceBasedAopConfigurer, Spring.Aop">
+    <property name="ObjectNames">
+      <list>
+        <value>*Presenter</value>
+      </list>
+    </property>
+    <property name="InterceptorNames">
+      <list>
+        <value>autoNotifyInterceptor</value>
+      </list>
+    </property>
+  </object>
+  <object id="autoNotifyInterceptor" type="AppFrame.Proxy.NotifyPropertyChangedInterceptor, AppFrame"/>
+  
+  
   <object name="LoginPresenter" type="AppFrameDemo.Module.Login.LoginPresenter, AppFrameDemo" autowire="constructor">    
   </object>
-  
+
   
   
   <!-- END Form definitions -->

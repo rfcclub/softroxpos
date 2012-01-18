@@ -24,6 +24,8 @@ namespace AppFrameDemo.Module.Login
             if(username.Equals("admin") && password.Equals("admin123"))
             {
                 AppFrameController.Instance.ShowMessage("Login successfully");
+                Username = "UmBo";
+                NotifyPropertyChanged("Username");
             }
             else
             {

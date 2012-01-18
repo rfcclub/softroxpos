@@ -43,9 +43,10 @@ namespace AppFrame.Common
                     BindingHelper.AutoBindMethod(control, Presenter);
                     continue;
                 }
-                //BindingHelper.AutoBindProperty(control, ViewModel);
+                //BindingHelper.AutoBindProperty(control, Presenter);
                 BindingHelper.AutoBindDataProperty(control, Presenter);
                 //BindingHelper.AutoBindTextBoxProperty(control, ViewModel);
+                
             }
             OnBinding();
         }

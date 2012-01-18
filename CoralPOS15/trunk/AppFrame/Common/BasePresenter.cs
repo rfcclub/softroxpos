@@ -6,7 +6,7 @@ using AppFrame.Common.Attributes;
 
 namespace AppFrame.Common
 {
-    public class BasePresenter : BindableObject, IPresenter, IViewModel
+    public class BasePresenter : BindableObject, IPresenter
     {
         private IView _view;
 
@@ -41,7 +41,7 @@ namespace AppFrame.Common
             //    ViewModel = (IViewModel)obj;
             //}
 
-            OnStartUp();
+            OnStartUp();            
         }
 
         public virtual void OnStartUp(){ }

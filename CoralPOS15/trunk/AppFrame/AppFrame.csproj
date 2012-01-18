@@ -38,21 +38,25 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.0.0.4001\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
       <HintPath>..\packages\Common.Logging.1.2.0\lib\1.0\Common.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\..\Enhancement2011\Libraries\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Spring.Aop">
-      <HintPath>..\..\Enhancement2011\Libraries\Spring.Aop.dll</HintPath>
+      <HintPath>..\packages\Spring.Aop.1.3.2\lib\net40\Spring.Aop.dll</HintPath>
     </Reference>
     <Reference Include="Spring.Core, Version=1.3.2.40943, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Spring.Core.1.3.2\lib\net40\Spring.Core.dll</HintPath>
     </Reference>
     <Reference Include="Spring.Data">
-      <HintPath>..\..\Enhancement2011\Libraries\Spring.Data.dll</HintPath>
+      <HintPath>..\packages\Spring.Data.1.3.2\lib\net40\Spring.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -73,10 +77,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Binding\AttributeHelperExtensions.cs" />
     <Compile Include="Common\AppFrameBinding.cs" />
     <Compile Include="Common\AppFrameController.cs" />
     <Compile Include="Common\AppFrameObserver.cs" />
     <Compile Include="Common\Attributes\DisplayValueAttribute.cs" />
+    <Compile Include="Common\Attributes\DoNotNotifyChangesAttribute.cs" />
+    <Compile Include="Common\Attributes\NotifyChangeForAttribute.cs" />
     <Compile Include="Common\BindableObject.cs" />
     <Compile Include="Binding\AttributeHelper.cs" />
     <Compile Include="Common\BasePresenter.cs" />
@@ -98,6 +105,10 @@
     <Compile Include="Common\Attributes\ViewAttribute.cs" />
     <Compile Include="Common\Attributes\ViewModelAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxy\AutoNotifyPropertyChangedInterceptor.cs" />
+    <Compile Include="Proxy\AutoNotifyPropertyChangedProxyCreator.cs" />
+    <Compile Include="Proxy\AutoNotifyProxyGenerationHook.cs" />
+    <Compile Include="Proxy\NotifyPropertyChangedInterceptor.cs" />
     <Compile Include="Utilities\StringStaticUtility.cs" />
     <EmbeddedResource Include="Common\BaseView.resx">
       <DependentUpon>BaseView.cs</DependentUpon>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reactive.Linq;
 using System.Text;
 
 namespace AppFrame.Common
@@ -22,7 +23,7 @@ namespace AppFrame.Common
         /// managed heap fragmentation.
         /// </summary>
         [Serializable]
-        public abstract class BindableObject : INotifyPropertyChanged
+        public abstract class BindableObject : INotifyPropertyChanged, IViewModel
         {
             #region Data
 
@@ -103,7 +104,7 @@ namespace AppFrame.Common
             }
 
             public void NotifyPropertyChanged<T>(Expression<Func<T>> propertyExpression)
-            {
+            {   
                 NotifyPropertyChanged(propertyExpression.Name);
             }
             

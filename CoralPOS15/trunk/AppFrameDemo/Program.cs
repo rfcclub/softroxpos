@@ -20,8 +20,8 @@ namespace AppFrameDemo
         {
 
             // spring config
-            System.Activator.CreateInstance(typeof (LoginPresenter));
-            IApplicationContext ctx = ContextRegistry.GetContext();
+            //System.Activator.CreateInstance(typeof (LoginPresenter));
+            //IApplicationContext ctx = ContextRegistry.GetContext();
 
 
             Application.EnableVisualStyles();

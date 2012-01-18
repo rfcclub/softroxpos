@@ -32,6 +32,18 @@ namespace AppFrame.Common
                 return _appFrameController;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TScreen"></typeparam>
+        public void OpenWithProxy<TScreen>() where TScreen : IPresenter
+        {
+            string screen = typeof(TScreen).Name;
+            Open(screen);
+
+        }
+
         /// <summary>
         /// 
         /// </summary>

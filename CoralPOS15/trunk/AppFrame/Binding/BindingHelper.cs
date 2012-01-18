@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using AppFrame.Common;
 using AppFrame.Common.Attributes;
+using System.ComponentModel;
 
 namespace AppFrame.Binding
 {
@@ -23,13 +24,17 @@ namespace AppFrame.Binding
         public const string NUMERICUPDOWN = "NumericUpDown";
         public const string TEXTBOX = "TextBox";
         public const string RADIOBUTTON = "RadioButton";
-        private const string LINKLABEL = "LinkLabel";
-        private const string DATAGRIDVIEW = "DataGridView";
-        protected const string PROPERTY_DATASOURCE = "DataSource";
-        protected const string EVENT_CLICK = "Click";
+        public const string LINKLABEL = "LinkLabel";
+        public const string DATAGRIDVIEW = "DataGridView";
+        public const string PROPERTY_DATASOURCE = "DataSource";
+        public const string EVENT_CLICK = "Click";
+        public const string PROPERTY_CHANGED = "PropertyChanged";
 
         public static IDictionary<string,string> ControlEventMap = new Dictionary<string, string>();
 
+        /// <summary>
+        /// static constructor
+        /// </summary>
         static BindingHelper()
         {
             // WinForm control
@@ -44,10 +49,15 @@ namespace AppFrame.Binding
             ControlEventMap[NUMERICUPDOWN] = "ValueChanged";
             ControlEventMap[TEXTBOX] = "TextChanged";
             ControlEventMap[RADIOBUTTON] = "CheckedChanged";
+        
             // DevExpress control
         }
 
-        
+        /// <summary>
+        /// Auto bind for method. Normally if control is button it will be auto binded to a method of ViewModel
+        /// </summary>
+        /// <param name="control"></param>
+        /// <param name="model"></param>
         public static void AutoBindMethod(Control control,object model)
         {
             Type modelType = model.GetType();
@@ -59,6 +69,11 @@ namespace AppFrame.Binding
             }
         }
 
+        /// <summary>
+        /// Auto bind using data binding
+        /// </summary>
+        /// <param name="control"></param>
+        /// <param name="model"></param>
         public static void AutoBindDataProperty(Control control,object model)
         {
             Type modelType = model.GetType();
@@ -134,6 +149,13 @@ namespace AppFrame.Binding
             }
         }
 
+        /// <summary>
+        /// Bind complex data binding
+        /// </summary>
+        /// <param name="control"></param>
+        /// <param name="model"></param>
+        /// <param name="propertyInfo"></param>
+        /// <param name="bindDisplayValue"></param>
         private static void BindComplexDataProperty(dynamic control, object model, PropertyInfo propertyInfo,bool bindDisplayValue = false)
         {
             
@@ -148,6 +170,16 @@ namespace AppFrame.Binding
             }
         }
 
+        /// <summary>
+        /// Bind simple data binding
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TSourceValue"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="sourceExpression"></param>
+        /// <param name="target"></param>
+        /// <param name="datamember"></param>
+        /// <param name="dataSourceUsing"></param>
         public static void BindSimpleDataProperty<TSource, TSourceValue>
                                    (TSource source,
                                     Expression<Func<TSource, TSourceValue>> sourceExpression,
@@ -161,6 +193,13 @@ namespace AppFrame.Binding
             source.DataBindings.Add(binding);
         }
 
+
+        /// <summary>
+        /// Bind a specific control to ViewModel using Reactive Extension
+        /// Default is binding one-way only
+        /// </summary>
+        /// <param name="control">Control</param>
+        /// <param name="model">ViewModel</param>
         public static void AutoBindProperty(Control control, object model)
         {
             Type modelType = model.GetType();
@@ -227,6 +266,19 @@ namespace AppFrame.Binding
             }
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TSourceValue"></typeparam>
+        /// <typeparam name="TTarget"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="sourceExpression"></param>
+        /// <param name="eventChangedString"></param>
+        /// <param name="target"></param>
+        /// <param name="targetPropertyInfo"></param>
+        /// <param name="twoWay"></param>
         public static void BindProperty<TSource,TSourceValue,TTarget>
                                    (TSource source,
                                     Expression<Func<TSource,TSourceValue>> sourceExpression,
@@ -235,13 +287,40 @@ namespace AppFrame.Binding
                                     PropertyInfo targetPropertyInfo,
                                     bool twoWay =false
                                     )
-        {
+        {            
             PropertyInfo sourcePropertyInfo = sourceExpression.ToPropertyInfo();
-            var observable = Observable.FromEventPattern<EventArgs>(source, eventChangedString);
-            observable.Subscribe(p => targetPropertyInfo.SetValue(
-                                               target, sourcePropertyInfo.GetValue(source,null), null));
+            BindProperty(source, sourcePropertyInfo, eventChangedString, target, targetPropertyInfo, twoWay);
+
+            //var observable = Observable.FromEventPattern<EventArgs>(source, eventChangedString);
+            //observable.Subscribe(p => targetPropertyInfo.SetValue(
+            //                                   target, sourcePropertyInfo.GetValue(source,null), null));
+
+            //if (twoWay)
+            //{
+            //    var reverseObservable = Observable.FromEventPattern<PropertyChangedEventArgs>(target, "PropertyChanged");
+            //    reverseObservable.Subscribe(rp => 
+            //    {                      
+            //            if(rp.EventArgs.PropertyName.Equals(targetPropertyInfo.Name))
+            //            {
+            //                sourcePropertyInfo.SetValue(source, targetPropertyInfo.GetValue(target, null), null);                    
+            //            }
+            //    });
+            //}
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TSourceValue"></typeparam>
+        /// <typeparam name="TTarget"></typeparam>
+        /// <typeparam name="TTargetValue"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="sourceExpression"></param>
+        /// <param name="eventChangedString"></param>
+        /// <param name="target"></param>
+        /// <param name="targetExpression"></param>
+        /// <param name="twoWay"></param>
         public static void BindProperty<TSource, TSourceValue, TTarget,TTargetValue>
                                    (TSource source,
                                     Expression<Func<TSource, TSourceValue>> sourceExpression,
@@ -253,9 +332,45 @@ namespace AppFrame.Binding
         {
             PropertyInfo sourcePropertyInfo = sourceExpression.ToPropertyInfo();
             PropertyInfo targetPropertyInfo = targetExpression.ToPropertyInfo();
+            BindProperty(source, sourcePropertyInfo,eventChangedString, target, targetPropertyInfo,twoWay);
+        }
+
+        /// <summary>
+        /// Bind from a WinForm event to a ViewModel event. It means that the binding is applied on UI elements.
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TSourceValue"></typeparam>
+        /// <typeparam name="TTarget"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="sourcePropertyInfo"></param>
+        /// <param name="eventChangedString"></param>
+        /// <param name="target"></param>
+        /// <param name="targetPropertyInfo"></param>
+        /// <param name="twoWay"></param>
+        public static void BindProperty<TSource, TTarget>
+                                   (TSource source,
+                                    PropertyInfo sourcePropertyInfo,
+                                    string eventChangedString,
+                                    TTarget target,
+                                    PropertyInfo targetPropertyInfo,
+                                    bool twoWay = false
+                                    )
+        {            
             var observable = Observable.FromEventPattern<EventArgs>(source, eventChangedString);
             observable.Subscribe(p => targetPropertyInfo.SetValue(
                                                target, sourcePropertyInfo.GetValue(source, null), null));
+
+            if (twoWay)
+            {
+                var reverseObservable = Observable.FromEventPattern<PropertyChangedEventArgs>(target, PROPERTY_CHANGED);
+                reverseObservable.Subscribe(rp =>
+                {
+                    if (rp.EventArgs.PropertyName.Equals(targetPropertyInfo.Name))
+                    {
+                        sourcePropertyInfo.SetValue(source, targetPropertyInfo.GetValue(target, null), null);
+                    }
+                });
+            }
         }
 
     }
