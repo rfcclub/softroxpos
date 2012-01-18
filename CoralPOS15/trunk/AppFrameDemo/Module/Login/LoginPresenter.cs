@@ -12,13 +12,11 @@ namespace AppFrameDemo.Module.Login
     public class LoginPresenter : BasePresenter
     {
 
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public virtual string Username { get; set; }
+        public virtual string Password { get; set; }
 
-        public void Login()
+        public virtual void Login()
         {
-            
-            
             string username = Username;
             string password = Password;
             if(username.Equals("admin") && password.Equals("admin123"))
