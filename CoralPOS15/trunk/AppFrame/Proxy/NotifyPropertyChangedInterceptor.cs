@@ -52,9 +52,9 @@ namespace AppFrame.Proxy
 
             var methodInfo = invocation.Method;
             //var model = (IViewModel)invocation.Proxy;
-            //var model = (IViewModel)invocation.Proxy;
-            //model.NotifyPropertyChanged(methodInfo.Name.Substring(SetPrefix.Length));
-            //ChangeNotificationForDependentProperties(methodInfo, model);
+            var model = (IViewModel)invocation.Proxy;
+            model.NotifyPropertyChanged(methodInfo.Name.Substring(SetPrefix.Length));
+            ChangeNotificationForDependentProperties(methodInfo, model);
             return obj;
         }
 

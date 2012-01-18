@@ -25,7 +25,7 @@ namespace AppFrameDemo.Module.Login
             {
                 AppFrameController.Instance.ShowMessage("Login successfully");
                 Username = "UmBo";
-                NotifyPropertyChanged("Username");
+                //NotifyPropertyChanged("Username");
             }
             else
             {
