@@ -60,8 +60,12 @@ namespace AppFrame.Proxy
                 System.Windows.Forms.BindingSource binding = cache.Get(methodInfo.Name.Substring(SetPrefix.Length));
                 if (binding != null)
                 {
-                    binding.RaiseListChangedEvents = true;                    
-                    binding.ResetBindings(true);                    
+                    string dataMember = binding.DataMember;
+                    object objects = binding.DataSource;
+                    binding.DataSource = null;
+
+                    binding.DataSource = objects;
+                    binding.DataMember = dataMember;
                 }
             }
             return obj;
