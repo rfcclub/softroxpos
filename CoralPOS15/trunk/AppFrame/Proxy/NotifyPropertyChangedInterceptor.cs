@@ -59,9 +59,9 @@ namespace AppFrame.Proxy
                 ModelBindingCache cache = ((BasePresenter)invocation.Proxy).BindingCache;
                 System.Windows.Forms.BindingSource binding = cache.Get(methodInfo.Name.Substring(SetPrefix.Length));
                 if (binding != null)
-                {                    
-                    binding.ResetBindings(true);
-                    binding.EndEdit();                    
+                {
+                    binding.RaiseListChangedEvents = true;                    
+                    binding.ResetBindings(true);                    
                 }
             }
             return obj;
