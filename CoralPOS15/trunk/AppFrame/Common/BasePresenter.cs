@@ -10,11 +10,13 @@ namespace AppFrame.Common
     {
         private IView _view;
 
+        public ModelBindingCache BindingCache { get; set; }
         //private IViewModel _viewModel;
 
         public BasePresenter()
         {
             StartUp();
+            BindingCache = new ModelBindingCache();
         }
 
         public IView View

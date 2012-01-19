@@ -5,6 +5,7 @@ using AppFrame.Common;
 using AppFrame.Common.Attributes;
 using AppFrame.Binding;
 using AopAlliance.Intercept;
+using System.Collections;
 
 namespace AppFrame.Proxy
 {
@@ -45,16 +46,24 @@ namespace AppFrame.Proxy
 
         public object Invoke(IMethodInvocation invocation)
         {
-            object obj = invocation.Proceed();
-
+            object obj = invocation.Proceed();            
             if (!invocation.Method.Name.StartsWith(SetPrefix)) return obj;
-            if (!(invocation.Proxy is IViewModel)) return obj;
-
+            if (!(invocation.Proxy is IViewModel)) return obj;            
             var methodInfo = invocation.Method;
             //var model = (IViewModel)invocation.Proxy;
             var model = (IViewModel)invocation.Proxy;
             model.NotifyPropertyChanged(methodInfo.Name.Substring(SetPrefix.Length));
             ChangeNotificationForDependentProperties(methodInfo, model);
+            if (invocation.Proxy is BasePresenter)
+            {
+                ModelBindingCache cache = ((BasePresenter)invocation.Proxy).BindingCache;
+                System.Windows.Forms.BindingSource binding = cache.Get(methodInfo.Name.Substring(SetPrefix.Length));
+                if (binding != null)
+                {                    
+                    binding.ResetBindings(true);
+                    binding.EndEdit();                    
+                }
+            }
             return obj;
         }
 

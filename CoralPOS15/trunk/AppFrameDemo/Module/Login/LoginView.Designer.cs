@@ -33,6 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.TextBox();
             this.Login = new System.Windows.Forms.Button();
+            this.UserInfo = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.UserInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // Username
@@ -84,11 +86,22 @@
             this.Login.Text = "Login";
             this.Login.UseVisualStyleBackColor = true;
             // 
+            // UserInfo
+            // 
+            this.UserInfo.AllowUserToAddRows = false;
+            this.UserInfo.AllowUserToDeleteRows = false;
+            this.UserInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UserInfo.Location = new System.Drawing.Point(61, 160);
+            this.UserInfo.Name = "UserInfo";
+            this.UserInfo.Size = new System.Drawing.Size(272, 150);
+            this.UserInfo.TabIndex = 5;
+            // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.UserInfo);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Password);
@@ -96,6 +109,7 @@
             this.Controls.Add(this.Username);
             this.Name = "LoginView";
             this.Size = new System.Drawing.Size(950, 640);
+            ((System.ComponentModel.ISupportInitialize)(this.UserInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,5 +122,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Button Login;
+        private System.Windows.Forms.DataGridView UserInfo;
     }
 }

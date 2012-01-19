@@ -141,12 +141,28 @@ namespace AppFrame.Binding
                         break;
                     case DATAGRIDVIEW:
                         var dataGridView = (DataGridView)control;
-                        BindComplexDataProperty(dataGridView, model, propertyInfo);
+                        BindDataGridDataProperty(dataGridView, model, propertyInfo);
                         break;
                     default:
                         break;
                 }
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dataGridView"></param>
+        /// <param name="model"></param>
+        /// <param name="propertyInfo"></param>
+        public static void BindDataGridDataProperty(DataGridView dataGridView, object model, PropertyInfo propertyInfo)
+        {            
+            BindingSource binding = new BindingSource();            
+            binding = new BindingSource(model, propertyInfo.Name);                        
+            BindingList<string> list = new BindingList<string>();
+            binding.RaiseListChangedEvents = true;
+            dataGridView.DataSource = binding;
+            UpdateBindingCache(model, propertyInfo.Name, binding);
         }
 
         /// <summary>
@@ -156,18 +172,18 @@ namespace AppFrame.Binding
         /// <param name="model"></param>
         /// <param name="propertyInfo"></param>
         /// <param name="bindDisplayValue"></param>
-        private static void BindComplexDataProperty(dynamic control, object model, PropertyInfo propertyInfo,bool bindDisplayValue = false)
-        {
-            
+        public static void BindComplexDataProperty(dynamic control, object model, PropertyInfo propertyInfo,bool bindDisplayValue = false)
+        {   
             BindingSource binding = new BindingSource(model, propertyInfo.Name);            
-            control.DataSource = binding;
+            control.DataSource = binding;            
             object[] attlist = propertyInfo.GetCustomAttributes(typeof(DisplayValueAttribute), false);
             if (bindDisplayValue && attlist.Length > 0)
             {
                 DisplayValueAttribute attribute = (DisplayValueAttribute)attlist[0];
                 control.DisplayMember = attribute.DisplayMember;
-                control.ValueMember = attribute.ValueMember;
+                control.ValueMember = attribute.ValueMember;                
             }
+            UpdateBindingCache(model, propertyInfo.Name, binding);
         }
 
         /// <summary>
@@ -193,6 +209,14 @@ namespace AppFrame.Binding
             source.DataBindings.Add(binding);
         }
 
+        private static void UpdateBindingCache(object model, string property, System.Windows.Forms.BindingSource binding)
+        {
+            if (model is BasePresenter)
+            {
+                ModelBindingCache cache = ((BasePresenter)model).BindingCache;
+                cache.Put(property, binding);
+            }
+        }
 
         /// <summary>
         /// Bind a specific control to ViewModel using Reactive Extension

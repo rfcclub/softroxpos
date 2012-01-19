@@ -101,6 +101,7 @@
     <Compile Include="Binding\BindingHelper.cs" />
     <Compile Include="Binding\RxHelper.cs" />
     <Compile Include="Common\Attributes\ToolBarItemAttribute.cs" />
+    <Compile Include="Common\ModelBindingCache.cs" />
     <Compile Include="Common\TypeToolBarItem.cs" />
     <Compile Include="Common\Attributes\ViewAttribute.cs" />
     <Compile Include="Common\Attributes\ViewModelAttribute.cs" />

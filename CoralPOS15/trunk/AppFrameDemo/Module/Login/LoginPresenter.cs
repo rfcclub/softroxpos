@@ -14,6 +14,7 @@ namespace AppFrameDemo.Module.Login
 
         public virtual string Username { get; set; }
         public virtual string Password { get; set; }
+        public virtual List<UserInf> UserInfo { get; set; }
 
         public virtual void Login()
         {
@@ -24,11 +25,38 @@ namespace AppFrameDemo.Module.Login
                 AppFrameController.Instance.ShowMessage("Login successfully");
                 Username = "UmBo";
                 //NotifyPropertyChanged("Username");
+                List<UserInf> list = new List<UserInf>();
+                for (int i = 0; i < 10; i++)
+                {
+                    UserInf userInf = new UserInf
+                                          {
+                                              Username = i.ToString(),
+                                              Password = i.ToString()
+                                          };
+                    list.Add(userInf);
+                }
+                UserInfo = list;
+                
             }
             else
             {
                 AppFrameController.Instance.ShowMessage("Login Fail !");
             }
+        }
+    }
+
+    public class UserInf
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public UserInf()
+        {
+        }
+
+        public UserInf(string username,string password)
+        {
+            Username = username;
+            Password = password;
         }
     }
 }
