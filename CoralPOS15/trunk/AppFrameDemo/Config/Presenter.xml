@@ -10,8 +10,8 @@
     <property name="DepartmentStockInLogic" ref="AppFrame.Service.IDepartmentStockInLogic"     />    
   </object>-->  
   <!-- START Logic definitions -->
-  <object id="autoNotifyInterceptor" type="AppFrame.Proxy.NotifyPropertyChangedInterceptor, AppFrame"/>
-  <object type="Spring.Aop.Framework.AutoProxy.InheritanceBasedAopConfigurer, Spring.Aop">
+  <!-- <object id="autoNotifyInterceptor" type="AppFrame.Proxy.NotifyPropertyChangedInterceptor, AppFrame" singleton="true"/>  
+  <object type="Spring.Aop.Framework.AutoProxy.InheritanceBasedAopConfigurer, Spring.Aop" singleton="true">
     <property name="ObjectNames">
       <list>
         <value>*Presenter</value>
@@ -22,11 +22,11 @@
         <value>autoNotifyInterceptor</value>
       </list>
     </property>
-  </object>
+  </object>   -->
   
   
   
-  <object name="LoginPresenter" type="AppFrameDemo.Module.Login.LoginPresenter, AppFrameDemo" autowire="constructor">    
+  <object name="LoginPresenter" type="AppFrameDemo.Module.Login.LoginPresenter, AppFrameDemo" autowire="constructor" singleton="false">    
   </object>
 
   

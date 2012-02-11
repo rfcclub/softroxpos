@@ -44,9 +44,6 @@
     <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
       <HintPath>..\packages\Common.Logging.1.2.0\lib\1.0\Common.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Iesi.Collections">
-      <HintPath>..\..\Enhancement2011\Libraries\Iesi.Collections.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Spring.Aop">
       <HintPath>..\packages\Spring.Aop.1.3.2\lib\net40\Spring.Aop.dll</HintPath>
@@ -79,39 +76,49 @@
   <ItemGroup>
     <Compile Include="Binding\AttributeHelperExtensions.cs" />
     <Compile Include="Common\AppFrameBinding.cs" />
-    <Compile Include="Common\AppFrameController.cs" />
-    <Compile Include="Common\AppFrameObserver.cs" />
-    <Compile Include="Common\Attributes\DisplayValueAttribute.cs" />
-    <Compile Include="Common\Attributes\DoNotNotifyChangesAttribute.cs" />
-    <Compile Include="Common\Attributes\NotifyChangeForAttribute.cs" />
-    <Compile Include="Common\BindableObject.cs" />
+    <Compile Include="Common\IMainForm.cs" />
+    <Compile Include="Common\DefaultMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\DefaultMainForm.Designer.cs">
+      <DependentUpon>DefaultMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\AppFrameController.cs" />
+    <Compile Include="Core\AppFrameObserver.cs" />
+    <Compile Include="Core\Attributes\DisplayValueAttribute.cs" />
+    <Compile Include="Core\Attributes\DoNotNotifyChangesAttribute.cs" />
+    <Compile Include="Core\Attributes\NotifyChangeForAttribute.cs" />
+    <Compile Include="Core\BindableObject.cs" />
     <Compile Include="Binding\AttributeHelper.cs" />
-    <Compile Include="Common\BasePresenter.cs" />
-    <Compile Include="Common\BaseView.cs">
+    <Compile Include="Core\BasePresenter.cs" />
+    <Compile Include="Core\BaseView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Common\BaseView.Designer.cs">
+    <Compile Include="Core\BaseView.Designer.cs">
       <DependentUpon>BaseView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Common\BaseViewModel.cs" />
-    <Compile Include="Common\IPresenter.cs" />
-    <Compile Include="Common\IViewModel.cs" />
-    <Compile Include="Common\IView.cs" />
-    <Compile Include="Common\Attributes\MenuItemAttribute.cs" />
+    <Compile Include="Core\BaseViewModel.cs" />
+    <Compile Include="Core\IPresenter.cs" />
+    <Compile Include="Core\IViewModel.cs" />
+    <Compile Include="Core\IView.cs" />
+    <Compile Include="Core\Attributes\MenuItemAttribute.cs" />
     <Compile Include="Binding\BindingHelper.cs" />
     <Compile Include="Binding\RxHelper.cs" />
-    <Compile Include="Common\Attributes\ToolBarItemAttribute.cs" />
-    <Compile Include="Common\ModelBindingCache.cs" />
-    <Compile Include="Common\TypeToolBarItem.cs" />
-    <Compile Include="Common\Attributes\ViewAttribute.cs" />
-    <Compile Include="Common\Attributes\ViewModelAttribute.cs" />
+    <Compile Include="Core\Attributes\ToolBarItemAttribute.cs" />
+    <Compile Include="Core\ModelBindingCache.cs" />
+    <Compile Include="Core\TypeToolBarItem.cs" />
+    <Compile Include="Core\Attributes\ViewAttribute.cs" />
+    <Compile Include="Core\Attributes\ViewModelAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy\AutoNotifyPropertyChangedInterceptor.cs" />
     <Compile Include="Proxy\AutoNotifyPropertyChangedProxyCreator.cs" />
     <Compile Include="Proxy\AutoNotifyProxyGenerationHook.cs" />
     <Compile Include="Proxy\NotifyPropertyChangedInterceptor.cs" />
     <Compile Include="Utilities\StringStaticUtility.cs" />
-    <EmbeddedResource Include="Common\BaseView.resx">
+    <EmbeddedResource Include="Common\DefaultMainForm.resx">
+      <DependentUpon>DefaultMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\BaseView.resx">
       <DependentUpon>BaseView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -135,7 +142,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Config\AppFrame.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

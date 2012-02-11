@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using AppFrame.Common;
-using AppFrame.Common.Attributes;
+using AppFrame.Core;
+using AppFrame.Core.Attributes;
 
 namespace AppFrameDemo.Module.Login
 {

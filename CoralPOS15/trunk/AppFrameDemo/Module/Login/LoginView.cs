@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using AppFrame.Common;
+using AppFrame.Core;
 
 namespace AppFrameDemo.Module.Login
 {

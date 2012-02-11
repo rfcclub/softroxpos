@@ -1,31 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Windows.Forms;
-using AppFrame.Common;
 using AppFrame.Core;
 
-namespace AppFrameDemo
+namespace AppFrame.Common
 {
-    public partial class MainForm : Form
+    public partial class DefaultMainForm : Form,IMainForm
     {
-        public MainForm()
+        public DefaultMainForm()
         {
             InitializeComponent();
             OnCreate();
         }
 
-        private void OnCreate()
+        public void OnCreate()
         {
             AppFrameController.Instance.ContainerControl = this.mainPanel;
             AppFrameController.Instance.ScanToolBar(this.GetType().Assembly);
             AppFrameController.Instance.ScanToolBar(AppDomain.CurrentDomain.GetAssemblies());
             AppFrameController.Instance.UpdateToolBar(this.GetType().Assembly,this.mainToolStrip);
+        }
+
+        public void OnClose()
+        {
+            // do nothing
         }
     }
 }

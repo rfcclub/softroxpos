@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"        
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:appframe="http://www.appframe.com/schema/appframe"
+  xsi:schemaLocation="http://www.springframework.net http://www.springframework.net/xsd/spring-objects.xsd">  
+  <!-- START PROXY definitions -->
+  <object id="autoNotifyInterceptor" type="AppFrame.Proxy.NotifyPropertyChangedInterceptor, AppFrame" singleton="true"/>
+  <object type="Spring.Aop.Framework.AutoProxy.InheritanceBasedAopConfigurer, Spring.Aop" singleton="true">
+    <property name="ObjectNames">
+      <list>
+        <value>*Presenter</value>
+      </list>
+    </property>
+    <property name="InterceptorNames">
+      <list>
+        <value>autoNotifyInterceptor</value>
+      </list>
+    </property>
+  </object>
+  <!-- END PROXY definitions -->
+</objects>

@@ -7,8 +7,9 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using AppFrame.Common;
-using AppFrame.Common.Attributes;
 using System.ComponentModel;
+using AppFrame.Core;
+using AppFrame.Core.Attributes;
 
 namespace AppFrame.Binding
 {
@@ -224,7 +225,7 @@ namespace AppFrame.Binding
         /// </summary>
         /// <param name="control">Control</param>
         /// <param name="model">ViewModel</param>
-        public static void AutoBindProperty(Control control, object model)
+        public static void AutoBindProperty(Control control, object model,bool twoWay = false)
         {
             Type modelType = model.GetType();
             PropertyInfo propertyInfo = modelType.GetProperty(control.Name);
@@ -232,54 +233,54 @@ namespace AppFrame.Binding
             if (propertyInfo != null)
             {
                 string name = control.GetType().Name;
-                string magicString = ControlEventMap[name];
+                string eventChangedString = ControlEventMap[name];
                 
                 switch (name)
                 {
                     case CHECKBOX:
                         var checkBox = (CheckBox)control;
-                        BindProperty(checkBox, tb => tb.Checked, magicString, model, propertyInfo);
+                        BindProperty(checkBox, tb => tb.Checked, eventChangedString, model, propertyInfo, twoWay);
                         break;
                     case COMBOBOX:
                         var comboBox = (ComboBox)control;
-                        BindProperty(comboBox, tb => tb.SelectedValue, magicString, model, propertyInfo);
+                        BindProperty(comboBox, tb => tb.SelectedValue, eventChangedString, model, propertyInfo, twoWay);
                         break;
                     case DATETIMEPICKER:
                         var dateTimePicker = (DateTimePicker)control;
-                        BindProperty(dateTimePicker, tb => tb.Value, magicString, model, propertyInfo);
+                        BindProperty(dateTimePicker, tb => tb.Value, eventChangedString, model, propertyInfo, twoWay);
                         break;
                     case LABEL:
                         var label = (Label)control;
-                        BindProperty(label, tb => tb.Text, magicString, model, propertyInfo);
+                        BindProperty(label, tb => tb.Text, eventChangedString, model, propertyInfo, twoWay);
                         break;
                     case LINKLABEL:
                         var linkLabel = (LinkLabel)control;
-                        BindProperty(linkLabel, tb => tb.Text, magicString, model, propertyInfo);
+                        BindProperty(linkLabel, tb => tb.Text, eventChangedString, model, propertyInfo, twoWay);
                         break;
                     case LISTBOX:
                         var listBox = (ListBox)control;
-                        BindProperty(listBox, tb => tb.SelectedValue, magicString, model, propertyInfo);
+                        BindProperty(listBox, tb => tb.SelectedValue, eventChangedString, model, propertyInfo, twoWay);
                         break;
                     case LISTVIEW:
                         var listView = (ListView)control;
-                        BindProperty(listView, tb => tb.SelectedItems, magicString, model, propertyInfo);
+                        BindProperty(listView, tb => tb.SelectedItems, eventChangedString, model, propertyInfo, twoWay);
                         break;
                     case MASKEDTEXTBOX:
                         var maskedTextBox = (MaskedTextBox)control;
-                        BindProperty(maskedTextBox, tb => tb.Text, magicString, model, propertyInfo);
+                        BindProperty(maskedTextBox, tb => tb.Text, eventChangedString, model, propertyInfo, twoWay);
                         break;
                     case NUMERICUPDOWN:
                         var numericUpDown = (NumericUpDown)control;
-                        BindProperty(numericUpDown, tb => tb.Value, magicString, model, propertyInfo);
+                        BindProperty(numericUpDown, tb => tb.Value, eventChangedString, model, propertyInfo, twoWay);
                         break;
                     case TEXTBOX:
                         var textBox = (TextBox) control;
                         //BindTextBoxProperty(textBox,model);
-                        BindProperty(textBox, tb => tb.Text, magicString, model, propertyInfo);
+                        BindProperty(textBox, tb => tb.Text, eventChangedString, model, propertyInfo, twoWay);
                         break;
                     case RADIOBUTTON:
                         var radioButton = (RadioButton)control;
-                        BindProperty(radioButton, tb => tb.Checked, magicString, model, propertyInfo);
+                        BindProperty(radioButton, tb => tb.Checked, eventChangedString, model, propertyInfo, twoWay);
                         break;
                     // TODO : for other types
                     default:

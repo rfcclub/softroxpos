@@ -1,6 +1,6 @@
-﻿namespace AppFrameDemo
+﻿namespace AppFrame.Common
 {
-    partial class MainForm
+    partial class DefaultMainForm
     {
         /// <summary>
         /// Required designer variable.
