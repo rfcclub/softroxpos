@@ -25,7 +25,7 @@ namespace AppFrameDemo
             AppFrameController.Instance.ContainerControl = this.mainPanel;
             AppFrameController.Instance.ScanToolBar(this.GetType().Assembly);
             AppFrameController.Instance.ScanToolBar(AppDomain.CurrentDomain.GetAssemblies());
-            AppFrameController.Instance.UpdateToolBar(this.GetType().Assembly,this.mainToolStrip);
+            AppFrameController.Instance.ScanAndUpdateToolBar(this.GetType().Assembly,this.mainToolStrip);
         }
     }
 }

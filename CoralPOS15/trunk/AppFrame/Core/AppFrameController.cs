@@ -177,9 +177,15 @@ namespace AppFrame.Core
                     }
                 }
             }
+            
         }
 
-        public void UpdateToolBar(Assembly assembly,ToolStrip toolStrip)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="assembly"></param>
+        /// <param name="toolStrip"></param>
+        public void ScanAndUpdateToolBar(Assembly assembly,ToolStrip toolStrip)
         {
             ToolBars.Clear();
             ScanToolBar(assembly);
@@ -190,6 +196,22 @@ namespace AppFrame.Core
                 ToolStripButton item = new ToolStripButton(toolBar.Key, null, 
                         (o,e) => AppFrameController.Instance.Open(presenterTypeName));
                 if(!string.IsNullOrEmpty(toolBar.Value.ToolBarImage))
+                {
+                    // TODO: load toolbar image here
+                }
+                toolStrip.Items.Add(item);
+            }
+        }
+
+        public void UpdateToolBar(ToolStrip toolStrip)
+        {
+            toolStrip.Items.Clear();
+            foreach (KeyValuePair<string, TypeToolBarItem> toolBar in ToolBars)
+            {
+                string presenterTypeName = toolBar.Value.ToolBarType.Name;
+                ToolStripButton item = new ToolStripButton(toolBar.Key, null,
+                        (o, e) => AppFrameController.Instance.Open(presenterTypeName));
+                if (!string.IsNullOrEmpty(toolBar.Value.ToolBarImage))
                 {
                     // TODO: load toolbar image here
                 }

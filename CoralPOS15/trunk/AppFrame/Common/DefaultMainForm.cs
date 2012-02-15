@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Windows.Forms;
 using AppFrame.Core;
 
@@ -15,9 +16,11 @@ namespace AppFrame.Common
         public void OnCreate()
         {
             AppFrameController.Instance.ContainerControl = this.mainPanel;
-            AppFrameController.Instance.ScanToolBar(this.GetType().Assembly);
+            AppFrameController.Instance.ScanToolBar(Assembly.GetEntryAssembly());
+            AppFrameController.Instance.ScanToolBar(Assembly.GetExecutingAssembly());
+            AppFrameController.Instance.ScanToolBar(Assembly.GetCallingAssembly());
             AppFrameController.Instance.ScanToolBar(AppDomain.CurrentDomain.GetAssemblies());
-            AppFrameController.Instance.UpdateToolBar(this.GetType().Assembly,this.mainToolStrip);
+            AppFrameController.Instance.UpdateToolBar(this.mainToolStrip);
         }
 
         public void OnClose()

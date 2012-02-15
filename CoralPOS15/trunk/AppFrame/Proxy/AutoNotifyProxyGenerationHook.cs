@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
+using AppFrame.Core.Attributes;
 using Castle.DynamicProxy;
-using AppFrame.Common.Attributes;
 using AppFrame.Binding;
 
 namespace AppFrame.Proxy

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DefaultMainForm));
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
